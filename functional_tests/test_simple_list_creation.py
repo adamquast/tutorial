@@ -8,7 +8,7 @@ class NewVistorTest(FunctionalTest):
     def test_can_start_a_list_and_retrieve_it_later(self):
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its homepage
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.server_url)
 
         # She notices the page title and header mention to-do lists
         self.assertIn('To-Do', self.browser.title)
@@ -51,7 +51,7 @@ class NewVistorTest(FunctionalTest):
         self.browser = webdriver.Chrome()
 
         # Francis visits the home page. There is not sign of Edith's list
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.server_url)
         page_body = self.browser.find_element_by_tag_name('body')
         page_text = self.browser.find_element_by_tag_name('body').text
         self.assertNotIn('Buy peacock feathers', page_text)
